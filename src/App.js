@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+// import logo from './logo.svg';
 import './App.css';
+import Childs from "./child";
 
 function App() {
+
+  const [count ,setcount] = useState(0);
+  const [day, setday] = useState(true);
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <React.Fragment>
+
+     <div className={`box ${day ? 'setdays' : ''}`} >
+       <h1>Good {day ? "Morning" : "Night"} </h1>
+       <br />
+       <button onClick={() => {setday(!day)}} >Change Day</button>
+     </div>
+
+<div className="boxs">
+<h1><Childs counter={count} /></h1>
+
+<button onClick={()=>{setcount(count + 1)}}>Increment</button>
+
+&nbsp;<button onClick={()=>setcount(count - 1)} >Decrement</button>
+</div>
+  
+
+   </React.Fragment>
+   
   );
 }
 
