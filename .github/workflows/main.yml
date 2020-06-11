@@ -33,4 +33,4 @@ jobs:
     - name: Installing Surge
       run: npm install -g surge
     - name: Running Surge
-      run: surge ./build assignment4.surge.sh --token ${{secrets.AF}}
+      run: surge ./build assignment-four.surge.sh --token ${{secrets.AF}}
